@@ -1,0 +1,9 @@
+@import '../../abstracts/variables/colors';
+
+.jlmayorga__page{
+    display: block;
+    background-color: var(--color-clear);
+    color: var(--color-accent);
+    box-sizing: border-box;
+    padding: 1em;
+}

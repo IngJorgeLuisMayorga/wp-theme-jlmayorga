@@ -21,7 +21,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -49,19 +48,39 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+.theme--synth {
+	--color-main: #1D293D;
+	--color-gray: #696969;
+	--color-clear: #f4f9fc;
+	--color-accent: #6400B1;
+	--color-texts: #DBB151;
+	--color-other: #98D5E9;
+}
+
+.theme--synth2 {
+	--color-main: #333D60;
+	--color-gray: #696969;
+	--color-clear: #f4f9fc;
+	--color-accent: #6400B1;
+	--color-texts: #6691AE;
+}
+
+.theme--synth3 {
+	--color-main: #251632;
+	--color-gray: #696969;
+	--color-clear: #f4f9fc;
+	--color-accent: #6400B1;
+	--color-texts: #98AB75;
+}
 
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
-
 /* Normalize
 --------------------------------------------- */
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document
 	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -73,7 +92,6 @@ html {
 
 /* Sections
 	 ========================================================================== */
-
 /**
  * Remove the margin in all browsers.
  */
@@ -99,7 +117,6 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -121,7 +138,6 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
-
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -187,7 +203,6 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -197,7 +212,6 @@ img {
 
 /* Forms
 	 ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -343,7 +357,6 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
-
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -360,7 +373,6 @@ summary {
 
 /* Misc
 	 ========================================================================== */
-
 /**
  * Add the correct display in IE 10+.
  */
@@ -377,7 +389,6 @@ template {
 
 /* Box sizing
 --------------------------------------------- */
-
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -393,7 +404,6 @@ html {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-
 /* Typography
 --------------------------------------------- */
 body,
@@ -475,6 +485,39 @@ body {
 	background: #fff;
 }
 
+.theme--synth {
+	--color-main: #1D293D;
+	--color-gray: #696969;
+	--color-clear: #f4f9fc;
+	--color-accent: #6400B1;
+	--color-texts: #DBB151;
+	--color-other: #98D5E9;
+}
+
+.theme--synth2 {
+	--color-main: #333D60;
+	--color-gray: #696969;
+	--color-clear: #f4f9fc;
+	--color-accent: #6400B1;
+	--color-texts: #6691AE;
+}
+
+.theme--synth3 {
+	--color-main: #251632;
+	--color-gray: #696969;
+	--color-clear: #f4f9fc;
+	--color-accent: #6400B1;
+	--color-texts: #98AB75;
+}
+
+.jlmayorga__page {
+	display: block;
+	background-color: var(--color-clear);
+	color: var(--color-accent);
+	box-sizing: border-box;
+	padding: 1em;
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -540,9 +583,7 @@ a:visited {
 	color: #800080;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:hover, a:focus, a:active {
 	color: #191970;
 }
 
@@ -550,8 +591,7 @@ a:focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
 	outline: 0;
 }
 
@@ -577,8 +617,7 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
 
-button:active,
-button:focus,
+button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -637,19 +676,194 @@ textarea {
 	width: 100%;
 }
 
+.jl-icon {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.jl--me {
+	content: url("./images/user.png");
+}
+
+.jl--projects {
+	content: url("./images/bag.png");
+}
+
+.jl--research {
+	content: url("./images/atom.png");
+}
+
+.jl--tutorials {
+	content: url("./images/schedule.png");
+}
+
+.jl--blog {
+	content: url("./images/copy-writing.png");
+}
+
+.jlmayorga__loading {
+	display: block;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	z-index: 100;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	color: var(--color-gray);
+}
+
+.jlmayorga__logo {
+	display: block;
+	width: 500px;
+	height: 150px;
+	border: 5px solid var(--color-gray);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 25px;
+}
+
+.logo__icon {
+	display: block;
+	width: 100px;
+	height: 100px;
+	border: 5px solid var(--color-gray);
+	border-radius: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo__icon h1 {
+	width: 100%;
+	font-size: 38px;
+	padding: 0px;
+	margin: 0px;
+	top: -32px;
+	position: relative;
+}
+
+.logo__icon span {
+	position: absolute;
+	top: 0px;
+	left: 36px;
+}
+
+.logo__icon span:first-child {
+	left: 5px;
+}
+
+.logo__icon span:last-child {
+	left: 60px;
+}
+
+.logo__title {
+	letter-spacing: 3px;
+	width: 253;
+	overflow: hidden;
+}
+
+.logo__title h1 {
+	padding: 0px;
+	margin: 0px;
+}
+
+.logo__title hr {
+	width: 156px;
+	height: 5px;
+	background-color: var(--color-gray);
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+	left: 93px;
+}
+
+.logo__title {
+	width: 253px;
+	animation: anim--open-title 2s ease-in normal forwards;
+}
+
+.logo__title hr {
+	width: 156px;
+	animation: anim--open-hr 2s ease-in normal forwards;
+}
+
+@keyframes anim--open-title {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes anim--open-hr {
+	0% {
+		width: 0px;
+	}
+	100% {
+		width: 156px;
+	}
+}
+
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
 /* Navigation
 --------------------------------------------- */
+/* --------------------------------
+---- HEADER -----------------------
+---------------------------------*/
+.site-header {
+	display: block;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* --------------------------------
+---- HEADER::LOGO -----------------
+---------------------------------*/
+.site-title {
+	display: block;
+	width: 80px;
+}
+
+.site-title img {
+	width: 100%;
+	padding-right: 20px;
+}
+
+.site-branding p {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* --------------------------------
+---- HEADER::NAVIGATION -----------
+---------------------------------*/
 .main-navigation {
 	display: block;
 	width: 100%;
+}
+
+.main-navigation i {
+	display: none;
 }
 
 .main-navigation ul {
@@ -657,6 +871,12 @@ textarea {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	display: block;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-end;
 }
 
 .main-navigation ul ul {
@@ -689,7 +909,12 @@ textarea {
 }
 
 .main-navigation li {
+	display: block;
 	position: relative;
+	padding: 0.5em 1em;
+	font-family: 'Arial';
+	letter-spacing: 3px;
+	color: var(--color-accent);
 }
 
 .main-navigation a {
@@ -704,20 +929,16 @@ textarea {
 }
 
 @media screen and (min-width: 37.5em) {
-
 	.menu-toggle {
 		display: none;
 	}
-
 	.main-navigation ul {
 		display: flex;
 	}
 }
 
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -739,6 +960,53 @@ textarea {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
+}
+
+@media screen and (max-width: 640px) {
+	.site-header {
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 80px;
+		background-color: var(--color-clear);
+	}
+	.site-title {
+		display: block;
+		width: 80px;
+	}
+	.site-title img {
+		padding: 10px;
+	}
+	.menu-mainmenu-container {
+		display: block;
+		width: calc(100% - 10px);
+		padding-right: 10px;
+		box-sizing: border-box;
+	}
+	#primary-menu {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+	#primary-menu li {
+		cursor: pointer;
+		margin: 0px;
+		opacity: 0.9;
+	}
+	#primary-menu li a span {
+		display: none;
+	}
+	#primary-menu li a i {
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+	}
+	#primary-menu li:hover {
+		opacity: 1;
+	}
 }
 
 /* Posts and pages
@@ -877,10 +1145,8 @@ textarea {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-
 /* Jetpack infinite scroll
 --------------------------------------------- */
-
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -895,10 +1161,8 @@ textarea {
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
 /* Accessibility
 --------------------------------------------- */
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -941,20 +1205,16 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
 	/*rtl:ignore*/
 	float: left;
-
 	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-
 	/*rtl:ignore*/
 	float: right;
-
 	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
@@ -967,3 +1227,5 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/*# sourceMappingURL=style.css.map */

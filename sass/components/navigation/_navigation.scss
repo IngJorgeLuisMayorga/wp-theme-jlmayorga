@@ -1,12 +1,62 @@
-.main-navigation {
+
+
+/* --------------------------------
+---- HEADER -----------------------
+---------------------------------*/
+.site-header{
 	display: block;
 	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* --------------------------------
+---- HEADER::LOGO -----------------
+---------------------------------*/
+.site-title{
+	display: block;
+	width: 80px;
+}
+.site-title img{
+	width: 100%;
+	padding-right: 20px;
+}
+.site-branding p{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* --------------------------------
+---- HEADER::NAVIGATION -----------
+---------------------------------*/
+.main-navigation {
+
+	display: block;
+	width: 100%;
+
+
+	i{
+		display: none;
+	}
 
 	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+
+		display: block;
+		width: 100%;
+
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-end;
+
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -32,7 +82,9 @@
 
 			a {
 				width: 200px;
+				
 			}
+
 
 			:hover > a,
 			.focus > a {
@@ -50,7 +102,14 @@
 	}
 
 	li {
+
+		display: block;
 		position: relative;
+		padding: 0.5em 1em;
+
+		font-family: 'Arial';
+		letter-spacing: 3px;
+		color: var(--color-accent);
 
 		&:hover > a,
 		&.focus > a {
@@ -74,6 +133,15 @@
 .main-navigation.toggled ul {
 	display: block;
 }
+
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 37.5em) {
 
@@ -105,5 +173,59 @@
 	.nav-next {
 		text-align: end;
 		flex: 1 0 50%;
+	}
+}
+
+
+
+
+
+@media screen and (max-width: 640px) {   
+
+	.site-header{
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 80px;
+		background-color: var(--color-clear);
+	}
+	.site-title{
+		display: block;
+		width: 80px;
+		img{
+		padding: 10px;
+		}
+	}
+	.menu-mainmenu-container{
+		display: block;
+		width: calc(100% - 10px);
+		padding-right: 10px;
+		box-sizing: border-box;
+	}
+	#primary-menu{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-start;
+		li{
+			cursor: pointer;
+			margin: 0px;
+			opacity: 0.9;
+
+			a span {
+				display: none;
+			}
+			a i{
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+			}
+		}
+		li:hover{
+			opacity: 1;
+		}
+	
 	}
 }

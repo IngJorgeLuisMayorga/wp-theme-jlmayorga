@@ -46,40 +46,105 @@
 <!-- ----------------------------------------------------------------- -->
 
 
+<!-- --------------------------------------------------- -->
+<!-- --- BODY ------------------------------------------ -->
+<!-- --------------------------------------------------- -->
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'personal-website-for-portfolio-and-blog-about-tech-code-ai-and-robotics' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$personal_website_for_portfolio_and_blog_about_tech_code_ai_and_robotics_description = get_bloginfo( 'description', 'display' );
-			if ( $personal_website_for_portfolio_and_blog_about_tech_code_ai_and_robotics_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $personal_website_for_portfolio_and_blog_about_tech_code_ai_and_robotics_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<!-- --------------------------------------------------- -->
+	<?php wp_body_open(); ?>
+	<!-- --------------------------------------------------- -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'personal-website-for-portfolio-and-blog-about-tech-code-ai-and-robotics' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+
+	<!-- --------------------------------------------------- -->
+	<div class="jlmayorga__loading theme--synth3">
+		<div class="jlmayorga__logo">
+		<div class="logo__icon">
+			<h1>
+				<span>&lt;</span>
+				<span>jl</span>
+				<span>&gt;</span>
+			</h1>
+		</div>
+		<div class="logo__title">
+			<h1>jorge.mayorga</h1>
+			<hr>
+		</div>
+		</div>
+	</div>
+	<!-- --------------------------------------------------- -->
+
+	<!-- -------------------------------------------------- -->
+	<!-- --- PAGE ----------------------------------------- -->
+	<!-- -------------------------------------------------- -->
+	<div id="page" class="jlmayorga__page theme--synth3 site">
+
+		<!-- -------------------------------------------------- -->
+		<!-- ----WORDPRESS:: Skip to content ------------------ -->
+		<!-- -------------------------------------------------- -->
+		<a class="skip-link screen-reader-text" href="#primary">
+			<?php esc_html_e( 'Skip to content', 'personal-website-for-portfolio-and-blog-about-tech-code-ai-and-robotics' ); ?>
+		</a>
+		<!-- -------------------------------------------------- -->
+
+		<!-- -------------------------------------------------- -->
+		<!-- ---- HEADER -------------------------------------- -->
+		<!-- -------------------------------------------------- -->
+		<header id="masthead" class="site-header">
+
+			<!-- -------------------------------------------------- -->
+			<!-- ---- HEADER::SITE BRANDING ----------------------- -->
+			<!-- -------------------------------------------------- -->
+			<div class="site-branding">
+				<?php
+				the_custom_logo();
+				if ( is_front_page() && is_home() ) :
+					?>
+					<h1 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
+						</a>
+					</h1>
+					<?php
+				else :
+					?>
+					<p class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<img alt="Logo" src="<?php echo get_template_directory_uri() ?>/images/logo.png">
+						</a>
+					</p>
+					<?php
+				endif;
+				$personal_website_for_portfolio_and_blog_about_tech_code_ai_and_robotics_description = get_bloginfo( 'description', 'display' );
+				if ( $personal_website_for_portfolio_and_blog_about_tech_code_ai_and_robotics_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $personal_website_for_portfolio_and_blog_about_tech_code_ai_and_robotics_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<?php endif; ?>
+			</div>
+			<!-- ----- / HEADER::SITE BRANDING -------------------- -->
+
+			<!-- -------------------------------------------------- -->
+			<!-- ---- HEADER::HEADER NAVIGATION ------------------- -->
+			<!-- -------------------------------------------------- -->
+				<nav id="site-navigation" class="main-navigation">
+					<ul id="primary-menu" class="">
+						<?php
+							$menu = wp_get_nav_menu_items('MainMenu');
+							foreach ($menu as $item) {
+								?> 
+									<li class="" >
+										<a class="" href="<?php echo($item->url); ?>" >
+											<?php echo($item->title); ?>
+										</a>
+									</li>
+								<?php
+							} 
+								
+						?>
+					</ul>
+				</nav>
+
+		
+			<!-- ------ / HEADER::HEADER NAVIGATION --------------- -->
+
+		</header>
+		<!-- --- /header -------------------------------------- -->
