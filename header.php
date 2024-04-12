@@ -49,35 +49,26 @@
 <!-- --------------------------------------------------- -->
 <!-- --- BODY ------------------------------------------ -->
 <!-- --------------------------------------------------- -->
-<body <?php body_class(); ?>>
+
+<?php
+	//session_start();
+	$visited = isset($_SESSION['visited']);
+	//$_SESSION['visited'] = true;
+?>
+
+<body
+	<?php body_class();  ?>  
+	is-first-time="<?=$visited?'':'first-visit'?>"
+>
 
 	<!-- --------------------------------------------------- -->
 	<?php wp_body_open(); ?>
 	<!-- --------------------------------------------------- -->
 
-
-	<!-- --------------------------------------------------- -->
-	<div class="jlmayorga__loading theme--synth3">
-		<div class="jlmayorga__logo">
-		<div class="logo__icon">
-			<h1>
-				<span>&lt;</span>
-				<span>jl</span>
-				<span>&gt;</span>
-			</h1>
-		</div>
-		<div class="logo__title">
-			<h1>jorge.mayorga</h1>
-			<hr>
-		</div>
-		</div>
-	</div>
-	<!-- --------------------------------------------------- -->
-
 	<!-- -------------------------------------------------- -->
 	<!-- --- PAGE ----------------------------------------- -->
 	<!-- -------------------------------------------------- -->
-	<div id="page" class="jlmayorga__page theme--synth3 site">
+		<div id="page" class="jlmayorga__page theme--synth3 site">
 
 		<!-- -------------------------------------------------- -->
 		<!-- ----WORDPRESS:: Skip to content ------------------ -->

@@ -483,6 +483,9 @@ big {
 --------------------------------------------- */
 body {
 	background: #fff;
+	--size-page-pd: 25px;
+	--size-page-border-m: 5px;
+	--size-page-border-xl: 25px;
 }
 
 .theme--synth {
@@ -516,6 +519,16 @@ body {
 	color: var(--color-accent);
 	box-sizing: border-box;
 	padding: 1em;
+	position: absolute;
+	top: var(--size-page-pd);
+	left: var(--size-page-pd);
+	width: calc(100vw - 2*var(--size-page-pd));
+	height: calc(100vh - 2*var(--size-page-pd));
+	overflow-y: scroll;
+}
+
+.jlmayorga__page::-webkit-scrollbar {
+	display: none;
 }
 
 hr {
@@ -705,13 +718,12 @@ textarea {
 }
 
 .jlmayorga__loading {
-	display: block;
 	width: 100%;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: white;
+	background-color: transparent;
 	z-index: 100;
 	position: fixed;
 	top: 0px;
@@ -719,11 +731,14 @@ textarea {
 	color: var(--color-gray);
 }
 
+.jlmayorga__loading.close {
+	display: none;
+}
+
 .jlmayorga__logo {
 	display: block;
 	width: 500px;
 	height: 150px;
-	border: 5px solid var(--color-gray);
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -799,6 +814,47 @@ textarea {
 	animation: anim--open-hr 2s ease-in normal forwards;
 }
 
+.jlmayorga__border {
+	display: block;
+	width: 500px;
+	height: 150px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	position: fixed;
+	border: var(--size-page-border-m) solid var(--color-gray);
+	z-index: 0;
+}
+
+.jlmayorga__page.close {
+	opacity: 0;
+	transition: all 2s;
+}
+
+.jlmayorga__page.open {
+	opacity: 1;
+	transition: all 2s;
+}
+
+.jlmayorga__border.close {
+	width: 500px;
+	height: 150px;
+	transition: all 2s;
+	border: var(--size-page-border-m) solid var(--color-gray);
+}
+
+.jlmayorga__border.open {
+	width: 100vw;
+	height: 100vh;
+	transition: all 2s;
+	border: var(--size-page-border-xl) solid var(--color-gray);
+}
+
 @keyframes anim--open-title {
 	0% {
 		opacity: 0;
@@ -811,6 +867,24 @@ textarea {
 @keyframes anim--open-hr {
 	0% {
 		width: 0px;
+	}
+	100% {
+		width: 156px;
+	}
+}
+
+@keyframes anim--open-border {
+	0% {
+		width: 0px;
+	}
+	100% {
+		width: 156px;
+	}
+}
+
+@keyframes anim--open-page {
+	0% {
+		opacity: 0;
 	}
 	100% {
 		width: 156px;
@@ -965,9 +1039,10 @@ textarea {
 @media screen and (max-width: 640px) {
 	.site-header {
 		position: fixed;
-		bottom: 0px;
-		left: 0px;
-		width: 100%;
+		z-index: 10;
+		bottom: var(--size-page-pd);
+		left: var(--size-page-pd);
+		width: calc(100vw - 2*var(--size-page-pd));
 		height: 80px;
 		background-color: var(--color-clear);
 	}

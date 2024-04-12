@@ -5,6 +5,9 @@
 
 get_header(); ?>
 
+
+<h1>Portfolio</h1>
+
 <div>
   <?php    
   if ( have_posts() ) :    

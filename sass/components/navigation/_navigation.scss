@@ -184,9 +184,10 @@
 
 	.site-header{
 		position: fixed;
-		bottom: 0px;
-		left: 0px;
-		width: 100%;
+		z-index: 10;
+		bottom: var(--size-page-pd);
+		left: var(--size-page-pd);
+		width: calc(100vw - 2*var(--size-page-pd));
 		height: 80px;
 		background-color: var(--color-clear);
 	}

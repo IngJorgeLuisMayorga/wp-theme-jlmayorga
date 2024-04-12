@@ -17,7 +17,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-
+	<h1>wed.dev</h1>
 
 
 	</main><!-- #main -->
