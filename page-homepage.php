@@ -17,7 +17,29 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-	<h1>wed.dev</h1>
+		<section class="carousel"></section>
+		<section class="categories"></section>
+		<section class="articles">
+			<ul class="the_lastes">
+				<li></li>
+			</ul>
+			<ul class="on-trending">
+				<li>
+					
+				</li>
+			</ul>
+		</section>
+		<section class="projects">
+			
+		</section>
+		<section class="up_coming_events">
+
+		</section>
+		<section class="about_me">
+
+		</section>
+		
+		<section class=""></section>
 
 
 	</main><!-- #main -->
